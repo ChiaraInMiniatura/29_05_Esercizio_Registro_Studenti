@@ -29,7 +29,7 @@ Piccolo progetto JavaScript per la gestione di un array di studenti tramite form
 
 * HTML5
 * CSS3
-* JavaScript Vanilla
+* JavaScript
 * Bootstrap 5
 
 ---
