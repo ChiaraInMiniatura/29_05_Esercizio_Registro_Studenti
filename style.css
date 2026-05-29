@@ -1,0 +1,131 @@
+body{
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+/* TITOLI */
+
+.main-title{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+
+
+.section-title{
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/* CARD */
+
+.custom-card{
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* INPUT */
+
+.custom-input{
+    background: rgba(255,255,255,0.08);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 14px;
+}
+
+.custom-input:focus{
+    background: rgba(255,255,255,0.12);
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(99,102,241,0.4);
+}
+
+.custom-input::placeholder{
+    color: #cbd5e1;
+}
+
+/* BOTTONE PRINCIPALE */
+
+.custom-btn{
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+    color: white;
+}
+
+.custom-btn:hover{
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* BOTTONI AZIONI */
+
+.action-btn{
+    background: rgba(255,255,255,0.08);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.action-btn:hover{
+    background: #6366f1;
+    color: white;
+    transform: scale(1.03);
+}
+
+/* OUTPUT */
+
+.output-card{
+    min-height: 300px;
+}
+
+#output{
+    background: rgba(0,0,0,0.2);
+    border-radius: 18px;
+    padding: 20px;
+    min-height: 220px;
+    overflow-y: auto;
+}
+
+.empty-state{
+    color: #cbd5e1;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.custom-badge{
+    background: #8b5cf6;
+    padding: 10px 14px;
+    border-radius: 999px;
+}
+
+/* SCROLLBAR */
+
+#output::-webkit-scrollbar{
+    width: 8px;
+}
+
+#output::-webkit-scrollbar-thumb{
+    background: #6366f1;
+    border-radius: 10px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px){
+
+    .main-title{
+        font-size: 2.2rem;
+    }
+
+}
