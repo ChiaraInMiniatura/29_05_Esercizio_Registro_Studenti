@@ -87,51 +87,73 @@
 
 
 
-    //array studenti
-    let studenti = [
-      {
-         nome : "Marco",
-         cognome : "Polo",
-         eta : 20,
-         voto: 8,
-         sport: ["nuoto", "arrampicata"]
+//array studenti
+let studenti = [
+  {
+    nome : "Marco",
+    cognome : "Polo",
+    eta : 20,
+    voto: 8,
+    sport: ["nuoto", "arrampicata"]
+  },
+  {
+    nome : "Giulia",
+    cognome : "Rossi",
+    eta : 30,
+    voto: 5,
+    sport: ["calcio", "ginnastica ritmica"]
+  },
+];
 
-      },
-      {
-         nome : "Giulia",
-         cognome : "Rossi",
-         eta : 30,
-         voto: 5,
-         sport: ["calcio", "ginnastica ritmica"]
-
-      },
-    ];
- 
-
-    //prendo il bottone per la funzione
-    let aggiungiStudente = document.getElementById("aggiungiStudente");
+//prendo il bottone per la funzione
+let aggiungiStudente = document.getElementById("aggiungiStudente");
 
 
-    //funzione prende i dati
-      aggiungiStudente.addEventListener("click", function(){
+//funzione prende i dati
+aggiungiStudente.addEventListener("click", function(){
 
+    let nome = document.getElementById("nome").value;
+    let cognome = document.getElementById("cognome").value;
+    let eta = parseInt(document.getElementById("eta").value);
+    let voto = parseFloat(document.getElementById("voto").value);
+    let sport1 = document.getElementById("sport1").value;
+    let sport2 = document.getElementById("sport2").value;
 
-      let nome = document.getElementbyId("nome").value;
-      let cognome = document.getElementbyId("cognome").value;
-      let eta = document.getElementbyId("eta").value;
-      let voto = document.getElementbyId("voto").value;
-      let sport1 = document.getElementbyId("sport1").value;
-      let sport2 = document.getElementbyId("sport2").value;
+    // creo oggetto studente
+    let studente = {
 
-      //pusho dentro un oggetto?
+        nome: nome,
+        cognome: cognome,
+        eta: eta,
+        voto: voto,
+        sport: [sport1, sport2]
+
+    };
+
+    // aggiungo lo studente nell'array
+    studenti.push(studente);
+
+    console.log(studenti);
+
+    //stampo in pagina
+
+       output.innerHTML += `
+
+         <h5>Nuovo studente</h5>
       
-      // creo oggetto vuoto e poi pusho?
+        <p>${studente.nome} ${studente.cognome}</p>
 
-     
-})
-   
-   
-console.log(studenti);
+        <p>Età: ${studente.eta}</p>
+
+        <p>Voto: ${studente.voto}</p>
+
+        <p>Sport preferiti: ${studente.sport1} - ${studente.sport2}</p>
+
+
+    `;
+
+
+});
 
 //--------------
 /*
@@ -172,8 +194,10 @@ mostraStudenti.addEventListener("click", function(){
             </p>
 
         `;
-
+     
     });
+
+     document.querySelector("form").reset();
 
 });
 
@@ -235,7 +259,7 @@ aggiungiPromosso.addEventListener("click", function(){
 
     studenti.forEach(function(studente){
 
-        if(studente.voto > 6){
+        if(studente.voto >= 6){
             studente.promosso = true;
 
             output.innerHTML += `
